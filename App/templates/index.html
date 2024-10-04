@@ -23,6 +23,7 @@
     </header>
 
     <section class="intermedio">
+        {% block intermedio %}
         <div class="contenedor-inicio">
             <div class="texto-inicio">
                 <h1 class="h1-inicio">Encuentra el hogar ideal</h1>
@@ -30,6 +31,7 @@
             </div>
             <img src="{% static 'img/index/casa.jpeg' %}" alt="Banner" class="img-inicio">
         </div>
+        {% endblock %}
     </section>
     
 

@@ -1,36 +1,57 @@
 {% extends 'index.html' %}
 
-    {% load static %}
+{% load static %}
 
-    {% block intermedio %}
-        <img src="{% static 'img/Intermedio/intermedio_propiedades.gif' %}" alt="Carrousel" class="principal_intermedio">
-    {% endblock %}
-
-    <!-- Main -->
-    {% block cuerpo %}
-        <div class="contenedor_propiedades">
-            <!-- 
-                i-- Variable para el conteo
-                forms -- Palabra enviada desde "Data" para Traer los Datos
-                for -- Ciclo por Conteo
-                Desde el Primer Elemento hasta el Ultimo elemento
-            -->
-            {% for i in forms %}
-            <div class="card" style="width: 18rem;">
-                <!-- Pasamos la Ruta de la Imagen Registrada -->
-                <img src="{{i.Imagen.url}}" class="card-img-top" alt="Imagen BD">
-                <div class="card-body">
-                  <h4 class="card-title">Nombre: {{i.Nombre}}</h4>
-                  <h5 class="card-title">Casa: {{i.Casa}}</h5>
-                  <p class="card-text">Hechizo: {{i.Hechizo}}</p>
-                  {% if perms.App.change_personajes %}
-                  <a href="{% url 'modificar' i.Codigo %}" class="btn btn-warning">Editar</a>
-                  {% endif %}
-                  {% if perms.App.delete_personajes %}
-                  <a href="{% url 'eliminar' i.Codigo %}" class="btn btn-danger">Eliminar</a>
-                  {% endif %}
-                </div>
-              </div>
-              {% endfor %}
+{% block intermedio %}
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="...">
         </div>
-    {% endblock %}
+        <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endblock %}
+
+<!-- Main -->
+{% block cuerpo %}
+<div class="contenedor_propiedades">
+    {% for i in forms %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ i.imagen.url }}" class="card-img-top" alt="Imagen de la Propiedad">
+        <div class="card-body">
+            <h4 class="card-title">Nombre: {{ i.nombre }}</h4>
+            <h5 class="card-title">Tipo: {{ i.tipo }}</h5>
+            <p class="card-text">Ubicación: {{ i.ubicacion }}</p>
+            <p class="card-text">Descripción: {{ i.descripcion }}</p>
+            <p class="card-text">Precio: ${{ i.precio }}</p>
+            <p class="card-text">Superficie Total: {{ i.superficie_total }} m²</p>
+            <p class="card-text">Superficie Cubierta: {{ i.superficie_cubierta }} m²</p>
+            <p class="card-text">Ambientes: {{ i.ambientes }}</p>
+            <p class="card-text">Plantas: {{ i.plantas }}</p>
+            <p class="card-text">Dormitorios: {{ i.dormitorios }}</p>
+            <p class="card-text">Baños: {{ i.baños }}</p>
+            {% if perms.App.change_propiedad %}
+            <a href="{% url 'modificar' i.codigo %}" class="btn btn-warning">Editar</a>
+            {% endif %}
+            {% if perms.App.delete_propiedad %}
+            <a href="{% url 'eliminar' i.codigo %}" class="btn btn-danger">Eliminar</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
