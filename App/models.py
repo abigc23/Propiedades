@@ -2,6 +2,7 @@ from django.db import models
 
 class Propiedad(models.Model):
     codigo = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100, default='Sin nombre') 
     operacion = models.CharField(max_length=100)
     tipo = models.CharField(max_length=30)
     ubicacion = models.CharField(max_length=100)

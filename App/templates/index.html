@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-    {% load static %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienes Raíces</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -28,29 +27,49 @@
                 <h1 class="h1-inicio">Encuentra el hogar ideal</h1>
                 <p>Explora nuestra selección de propiedades y descubre el lugar perfecto para ti. Desde modernas casas urbanas hasta tranquilas villas en el campo, tenemos opciones para todos los estilos de vida. Con nuestro equipo de expertos, encontrar tu nuevo hogar nunca ha sido tan fácil. ¡Comienza hoy tu búsqueda y da el primer paso hacia la casa de tus sueños!</p>
             </div>
-            <img src="{% static 'img/index/casa.jpeg' %}" alt="Banner" class="img-inicio">
+            <img src="{% static 'img/index/casa.png' %}" alt="Banner" class="img-inicio">
         </div>
         {% endblock %}
     </section>
-    
 
-    <main class="contenedor_general">
-        <h2 class="subtitulo_index">Últimas Propiedades</h2>
-        <div class="contenedor_propiedades">
+    <div class="separador"></div>
+
+
+    <section class="mapa-container"></section>
+        <div class="mapa-contacto">
+            <h3>Ubicación de Nuestra Inmobiliaria</h3>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.7857989115023!2d-58.505622025035564!3d-34.86160917116241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd6d9ed09be39%3A0xfd444b8009543f91!2sMazzei%20Propiedades!5e0!3m2!1ses-419!2sar!4v1728016688349!5m2!1ses-419!2sar" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+        </div>
+        <div class="contacto-container">
+            <h3>Datos de Contacto</h3>
+            <p>Teléfono:  5075-0316</p>
+            <p>E-mail: infocanning@mazzeipropiedades.com</p>
+            <p>Dirección: Av. M. Castex 1413 (Ruta 52), Canning</p>
+        </div>
+    </section>
+
+    <main class="contenedor_general_props">
+        <div class="contenedor_props">
             {% for propiedad in propiedades %}
-            <div class="card" style="width: 18rem;">
+            <div class="card propiedad-card">
                 <img src="{{ propiedad.imagen.url }}" class="card-img-top" alt="Imagen de {{ propiedad.operacion }}">
                 <div class="card-body">
-                    <h4 class="card-title">Tipo de operación: {{ propiedad.operacion }}</h4>
-                    <h5 class="card-title">Tipo: {{ propiedad.tipo }}</h5>
-                    <p class="card-text">Ubicación: {{ propiedad.ubicacion }}</p>
-                    <p class="card-text">Descripción: {{ propiedad.descripcion }}</p>
-                    <p class="card-text">Precio: ${{ propiedad.precio }}</p>
-                    <a href="{% url 'ver_detalle' propiedad.codigo %}" class="btn btn-primary">Ver Más</a>
+                    <p class="tipo-operacion">Venta / {{ propiedad.tipo }} / COD. {{ propiedad.codigo }}</p>
+                    <h5 class="nombre-propiedad">{{ propiedad.nombre }}</h5>
+                    <p class="ubicacion-propiedad">({{ propiedad.ubicacion }})</p>
+                    <p class="precio-propiedad">U$S {{ propiedad.precio }}</p>
+                    <a href="{% url 'detallesprop' propiedad.codigo %}" class="btn btn-primary">Ver Más</a>
                 </div>
             </div>
             {% endfor %}
         </div>
+
     </main>
 
     <footer>

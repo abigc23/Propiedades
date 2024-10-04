@@ -10,8 +10,13 @@
 </head>
 
 <body>
-    <header>
+    <header class="encabezado">
         <a href="{% url 'inicio' %}"><img src="{% static 'img/index/logo.png' %}" alt="Logo" class="logotipo"></a>
+        <nav class="menu_selectivo">
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'propiedades' %}">Propiedades</a>
+            <a href="#">Contacto</a>
+        </nav>
     </header>
 
     <main class="contenedor_general">
@@ -23,14 +28,17 @@
                 <p><strong>Tipo de propiedad:</strong> {{ propiedad.tipo }}</p>
                 <p><strong>Ubicación:</strong> {{ propiedad.ubicacion }}</p>
                 <p><strong>Descripción:</strong> {{ propiedad.descripcion }}</p>
-                <p><strong>Precio:</strong> ${{ propiedad.precio }}</p>
-                <p><strong>Superficie Total:</strong> {{ propiedad.superficie_total }} m²</p>
-                <p><strong>Superficie Cubierta:</strong> {{ propiedad.superficie_cubierta }} m²</p>
-                <p><strong>Ambientes:</strong> {{ propiedad.ambientes }}</p>
-                <p><strong>Plantas:</strong> {{ propiedad.plantas }}</p>
-                <p><strong>Dormitorios:</strong> {{ propiedad.dormitorios }}</p>
-                <p><strong>Baños:</strong> {{ propiedad.baños }}</p>
-                <p><strong>Publicado en:</strong> {{ propiedad.fecha_publicacion|date:"d M Y" }}</p>
+                <p><strong>Precio:</strong> U$S {{ propiedad.precio }}</p>
+
+                <div class="detalle-icons">
+                    <p>Sup. Total: {{ propiedad.superficie_total }} m²</p>
+                    <p> Sup. Cubierta: {{ propiedad.superficie_cubierta }} m²</p>
+                    <p>Ambientes: {{ propiedad.ambientes }}</p>
+                    <p>Plantas: {{ propiedad.plantas }}</p>
+                    <p> Dormitorios: {{ propiedad.dormitorios }}</p>
+                    <p>Baños: {{ propiedad.baños }}</p>
+                </div>
+                <p><strong>Publicado el:</strong> {{ propiedad.fecha_publicacion|date:"d M Y" }}</p>
             </div>
         </div>
         <a href="{% url 'inicio' %}" class="btn btn-primary">Volver a la lista de propiedades</a>

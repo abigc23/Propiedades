@@ -1,4 +1,4 @@
-/* Estilos Generales */
+/* Estilos Globales */
 * {
     margin: 0;
     padding: 0;
@@ -8,20 +8,21 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    color: white; /* Cambiar todas las fuentes a blanco */
 }
 
-/* Estilos del Encabezado */
+/* Encabezado */
 .encabezado {
     height: 80px;
     background: #A62F2F;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinea verticalmente el logo y el menú */
-    padding: 0 10px; /* Añade algo de espacio en los laterales */
+    align-items: center;
+    padding: 0 10px;
 }
 
 .logotipo {
-    width: 300px; /* Tamaño más adecuado para el logo */
+    width: 200px;
     height: auto;
 }
 
@@ -36,7 +37,7 @@ body {
     margin-right: 10px;
     text-decoration: none;
     font-size: 16px;
-    color: #ffffff;
+    color: #ffffff; /* Color de fuente blanca */
     padding-bottom: 5px;
 }
 
@@ -45,13 +46,13 @@ body {
     border-bottom: 2px solid white;
 }
 
+/* Botón de Contacto */
 #contacto_btn {
     padding: 10px;
     border-radius: 10px;
-    color: #FCFCFC;
 }
 
-/* Estilos de la Sección Intermedia */
+/* Secciones Intermedias */
 .intermedio {
     text-align: center;
 }
@@ -65,14 +66,67 @@ body {
     filter: contrast(120%);
 }
 
-/* Estilos del Contenedor General */
+/* Contenedor General */
 .contenedor_general {
+    text-align: center;
     padding: 20px;
+}
+.contenedor_general_props{
+    margin-top: 20;
 }
 
 
+.separador {
+    width: 100%;
+    height: 10px;
+    background-color: #A62F2F; /* Color del separador */
+    margin: 20px 0; /* Espacio alrededor del separador */
+}
 
-/* Estilos del Contenedor Index */
+/* Mapa y Contacto */
+.mapa-container {
+    background-color: #A62F2F;
+}
+
+.mapa-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0;
+    color: white;
+}
+
+.mapa-container, .contacto-container {
+    text-align: center; 
+    background-color: #A62F2F;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.contacto-container h3 {
+    margin-bottom: 10px; /* Reducir el espacio debajo del título */
+    font-size: 1.5rem; /* Ajustar el tamaño de la fuente */
+    color: #fff;
+}
+
+.contacto-container p {
+    margin: 5px 0; /* Reducir el espacio entre los párrafos */
+    font-size: 1rem; /* Tamaño de la fuente de los párrafos */
+    color: #fff; /* Color del texto */
+}
+
+.mapa-container iframe {
+    max-width: 100%;
+    border-radius: 10px; 
+}
+
+.contacto-container {
+    color: white;
+    margin-top: 20px; 
+}
+
+/* Contenedor Index */
 .contenedor_index {
     display: flex;
     justify-content: space-between;
@@ -88,20 +142,21 @@ body {
     height: 450px;
 }
 
+/* Contenedor Inicio */
 .contenedor-inicio {
     margin: auto;
     display: flex;
-    justify-content: space-around; /* Deja espacio entre el texto y la imagen */
-    align-items: center; /* Alinea verticalmente el texto con la imagen */
+    justify-content: space-around;
+    align-items: center;
     padding: 20px;
-    gap: 20px; /* Espacio entre el texto y la imagen */
+    gap: 20px;
 }
 
 .texto-inicio {
     text-align: left;
     display: flex;
-    flex-direction: column; /* Coloca el h1 y p en columna */
-    max-width: 40%; /* Limita el ancho del texto al 50% */
+    flex-direction: column;
+    max-width: 40%;
 }
 
 .texto-inicio h1 {
@@ -116,32 +171,14 @@ body {
 }
 
 .img-inicio {
-    max-width: 500px; /* Limita el ancho máximo de la imagen */
+    max-width: 500px; 
     height: auto;
     border-radius: 10px;
     margin-top: 5%;
 }
 
 
-/* Estilos de Títulos */
-.artitulo {
-    width: auto;
-    height: auto;
-    padding: 5px;
-}
-
-.artitulo h2 {
-    color: #A62F2F;
-    font-size: 25px;
-    text-align: center;
-}
-
-.artitulo p {
-    line-height: 28px;
-    color: #343434;
-}
-
-/* Estilos del Footer */
+/* Footer */
 footer {
     margin-top: 5px;
     height: 80px;
@@ -156,73 +193,12 @@ footer img {
     height: 50px;
     margin-right: 5px;
 }
+
 .footer {
     justify-content: space-evenly;
 }
 
-/* ---- Tarjetas Index ---- */
-.tarjetas_index {
-    display: flex;
-    justify-content: center;
-    grid-gap: 50px;
-    padding-bottom: 120px;
-    margin-top: -120px;
-}
-
-/* FLIP CARD */
-.tarjeta_volteo {
-    width: 250px;
-    height: 459px;
-    perspective: 2000px;
-}
-
-.tarjeta_volteo-front img {
-    width: 250px;
-    height: 504px;
-    border-radius: 20px;
-}
-
-.tarjeta_volteo-interno {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 28px;
-    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
-    transform-style: preserve-3d;
-}
-
-.tarjeta_volteo-front,
-.tarjeta_volteo-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 28px;
-    backface-visibility: hidden;
-}
-
-.tarjeta_volteo-front {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.tarjeta_volteo-back {
-    font-size: 1.25rem;
-    text-align: center;
-    display: grid;
-    place-items: center;
-    padding: 5px;
-    background-color: #343434;
-    transform: rotateY(180deg);
-    color: #EEEEEE;
-}
-
-.tarjeta_volteo:hover .tarjeta_volteo-interno {
-    transform: rotateY(-180deg);
-}
-
-/* -----> Configuración del Sector Agregar <----- */
+/* Contenedor Agregar */
 .contendor_agregar {
     width: 1200px;
     height: 550px;
@@ -245,9 +221,15 @@ footer img {
 
 .contendor_agregar form h1 {
     font-size: 35px;
-    color: #395090;
+    color: #395090; /* Título en color específico */
     text-align: center;
     margin-bottom: 20px;
+}
+
+/* Propiedades */
+.titulo-props {
+    align-self: center;
+    margin: auto;
 }
 
 .contendor_agregar form textarea {
@@ -258,43 +240,153 @@ footer img {
     margin: 8px 0;
 }
 
+/* Botón */
 .btn {
     margin-top: 15px;
     width: 99%;
+    background-color: #A62F2F;
+    color: white; /* Texto en blanco */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
+.btn:hover {
+    background-color: #8a2424;
+}
+
+/* Respuesta */
 .respuesta {
     color: #395090;
     font-size: 18px;
     font-style: italic;
 }
 
-/* -----> Configuración del Sector propiedades <----- */
-.contenedor_propiedades {
-    display: flex;
+/* Contenedores de Propiedades */
+.contenedor_propiedades,
+.contenedor_props {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
     justify-content: center;
 }
 
-.card {
-    margin-left: 15px;
+.contenedor_props {
+    justify-items: center; 
+    margin: auto;
+    max-width: 1200px;
 }
 
-.card-title {
-    font-size: 18px;
+/* Tarjetas de Propiedad */
+.propiedad-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contacto_btl {
-    padding: 10px;
-    border-radius: 10px;
-    background: #275f39;
-    color: #FCFCFC;
+.propiedad-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.subtitulo_index {
-    font-size: 45px;
-    color: #A62F2F;
+.propiedad-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+}
+
+.card-body {
+    padding: 15px;
     text-align: center;
-    margin-bottom: 25px;
 }
 
-/* -----> Configuración del Sector Modificar <----- */
+.tipo-operacion {
+    font-size: 14px;
+    color: #A62F2F;
+}
+
+.nombre-propiedad {
+    font-size: 18px;
+    font-weight: bold;
+    color: #343434;
+    margin-top: 10px;
+}
+
+.ubicacion-propiedad {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.precio-propiedad {
+    font-size: 20px;
+    font-weight: bold;
+    color: #A62F2F;
+    margin-bottom: 15px;
+}
+
+/* NUEVAS REGLAS CSS AGREGADAS */
+
+/* Detalle de Propiedad */
+.detalle-propiedad {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.img-detalle {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.info-propiedad {
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detalle-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.detalle-icons p {
+    display: flex;
+    align-items: center;
+}
+
+.detalle-icons img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Ajuste del botón */
+.btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #A62F2F;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #8a2424;
+}
