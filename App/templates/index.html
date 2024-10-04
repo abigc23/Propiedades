@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienes Raíces</title>
-    <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- Hoja de Estilos de Bootstrap -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -38,30 +37,19 @@
     <main class="contenedor_general">
         <h2 class="subtitulo_index">Últimas Propiedades</h2>
         <div class="contenedor_propiedades">
+            {% for propiedad in propiedades %}
             <div class="card" style="width: 18rem;">
-                <img src="propiedad1.jpg" class="card-img-top" alt="Propiedad 1">
+                <img src="{{ propiedad.imagen.url }}" class="card-img-top" alt="Imagen de {{ propiedad.operacion }}">
                 <div class="card-body">
-                    <h4 class="card-title">Casa en la Playa</h4>
-                    <p class="card-text">Hermosa casa de 3 habitaciones a solo pasos de la playa.</p>
-                    <a href="#" class="btn btn-primary">Ver Más</a>
+                    <h4 class="card-title">Tipo de operación: {{ propiedad.operacion }}</h4>
+                    <h5 class="card-title">Tipo: {{ propiedad.tipo }}</h5>
+                    <p class="card-text">Ubicación: {{ propiedad.ubicacion }}</p>
+                    <p class="card-text">Descripción: {{ propiedad.descripcion }}</p>
+                    <p class="card-text">Precio: ${{ propiedad.precio }}</p>
+                    <a href="{% url 'ver_detalle' propiedad.codigo %}" class="btn btn-primary">Ver Más</a>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="propiedad2.jpg" class="card-img-top" alt="Propiedad 2">
-                <div class="card-body">
-                    <h4 class="card-title">Apartamento en el Centro</h4>
-                    <p class="card-text">Moderno apartamento de 2 habitaciones en el corazón de la ciudad.</p>
-                    <a href="#" class="btn btn-primary">Ver Más</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="propiedad3.jpg" class="card-img-top" alt="Propiedad 3">
-                <div class="card-body">
-                    <h4 class="card-title">Villa en el Campo</h4>
-                    <p class="card-text">Villa espaciosa rodeada de naturaleza y tranquilidad.</p>
-                    <a href="#" class="btn btn-primary">Ver Más</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </main>
 
@@ -74,7 +62,6 @@
         </div>
     </footer>
 
-    <!-- Hoja de Acciones de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
