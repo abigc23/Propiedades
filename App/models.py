@@ -5,6 +5,7 @@ class Propiedad(models.Model):
     operacion = models.CharField(max_length=100)
     tipo = models.CharField(max_length=30)
     ubicacion = models.CharField(max_length=100)
+    descripcion = models.TextField(null=True, blank=True)  # Ahora permite valores nulos o vacíos
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     imagen = models.ImageField(upload_to="propiedades/", null=True, blank=True)
     superficie_total = models.DecimalField(max_digits=10, decimal_places=2)
