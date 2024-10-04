@@ -1,9 +1,16 @@
+/* Estilos Generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Estilos del Encabezado */
 .encabezado {
     height: 80px;
     background: #A62F2F;
@@ -16,7 +23,6 @@
 .logotipo {
     width: 300px; /* Tamaño más adecuado para el logo */
     height: auto;
-    margin-left: 0;
 }
 
 .menu_selectivo {
@@ -45,8 +51,9 @@
     color: #FCFCFC;
 }
 
-.contenedor_general {
-    padding: 20px;
+/* Estilos de la Sección Intermedia */
+.intermedio {
+    text-align: center;
 }
 
 .intermedio img {
@@ -54,18 +61,22 @@
     width: 100%;
 }
 
-
-.principal_intermedio{
+.principal_intermedio {
     filter: contrast(120%);
 }
 
+/* Estilos del Contenedor General */
+.contenedor_general {
+    padding: 20px;
+}
 
+
+
+/* Estilos del Contenedor Index */
 .contenedor_index {
     display: flex;
     justify-content: space-between;
-    /* Ancho */
     width: 1200px;
-    /* Alto */
     height: 650px;
     margin: 0 auto;
     border-radius: 15px;
@@ -77,6 +88,42 @@
     height: 450px;
 }
 
+.contenedor-inicio {
+    margin: auto;
+    display: flex;
+    justify-content: space-around; /* Deja espacio entre el texto y la imagen */
+    align-items: center; /* Alinea verticalmente el texto con la imagen */
+    padding: 20px;
+    gap: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.texto-inicio {
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Coloca el h1 y p en columna */
+    max-width: 40%; /* Limita el ancho del texto al 50% */
+}
+
+.texto-inicio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    border-bottom: solid #A62F2F 10px;
+}
+
+.texto-inicio p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.img-inicio {
+    max-width: 500px; /* Limita el ancho máximo de la imagen */
+    height: auto;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+
+/* Estilos de Títulos */
 .artitulo {
     width: auto;
     height: auto;
@@ -84,7 +131,7 @@
 }
 
 .artitulo h2 {
-    color: #395090;
+    color: #A62F2F;
     font-size: 25px;
     text-align: center;
 }
@@ -94,12 +141,11 @@
     color: #343434;
 }
 
-
-
+/* Estilos del Footer */
 footer {
     margin-top: 5px;
     height: 80px;
-    background-color: #EEEEEE;
+    background-color: #A62F2F;
     display: flex;
     justify-content: center;
 }
@@ -110,7 +156,9 @@ footer img {
     height: 50px;
     margin-right: 5px;
 }
-
+.footer {
+    justify-content: space-evenly;
+}
 
 /* ---- Tarjetas Index ---- */
 .tarjetas_index {
@@ -124,7 +172,7 @@ footer img {
 /* FLIP CARD */
 .tarjeta_volteo {
     width: 250px;
-    height: 459PX;
+    height: 459px;
     perspective: 2000px;
 }
 
@@ -133,7 +181,6 @@ footer img {
     height: 504px;
     border-radius: 20px;
 }
-
 
 .tarjeta_volteo-interno {
     position: relative;
@@ -175,9 +222,8 @@ footer img {
     transform: rotateY(-180deg);
 }
 
-
 /* -----> Configuración del Sector Agregar <----- */
-.contendor_agregar{
+.contendor_agregar {
     width: 1200px;
     height: 550px;
     border-radius: 20px;
@@ -187,24 +233,24 @@ footer img {
     justify-content: space-between;
 }
 
-.contendor_agregar img{
+.contendor_agregar img {
     width: 38%;
     object-fit: cover;
 }
 
-.contendor_agregar form{
+.contendor_agregar form {
     padding: 20px;
     width: 62%;
 }
 
-.contendor_agregar form h1{
+.contendor_agregar form h1 {
     font-size: 35px;
     color: #395090;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.contendor_agregar form textarea{
+.contendor_agregar form textarea {
     width: 98%;
     height: 50px;
     border-radius: 20px;
@@ -212,46 +258,41 @@ footer img {
     margin: 8px 0;
 }
 
-.btn{
-   margin-top: 15px;
-   width: 99%;
+.btn {
+    margin-top: 15px;
+    width: 99%;
 }
 
-
-.respuesta{
+.respuesta {
     color: #395090;
     font-size: 18px;
     font-style: italic;
 }
 
 /* -----> Configuración del Sector propiedades <----- */
-
-.contenedor_propiedades{
+.contenedor_propiedades {
     display: flex;
     justify-content: center;
 }
 
-.card{
-    margin-left: 15px;  
+.card {
+    margin-left: 15px;
 }
 
-.card-title{
+.card-title {
     font-size: 18px;
 }
 
-.contacto_btl{
-    /* Relleno */
+.contacto_btl {
     padding: 10px;
-    /* Redondear las Esquinas */
     border-radius: 10px;
-    /* Color de Fondo */
     background: #275f39;
     color: #FCFCFC;
 }
 
-.subtitulo_index{
+.subtitulo_index {
     font-size: 45px;
-    color: #395090;
+    color: #A62F2F;
     text-align: center;
     margin-bottom: 25px;
 }

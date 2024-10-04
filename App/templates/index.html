@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
-
+<html lang="es">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propiedades</title>
+    <title>Bienes Raíces</title>
     <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Hoja de Estilos de Bootstrap -->
@@ -15,144 +14,67 @@
 
 <body>
     <header class="encabezado">
-       <a href="{% url 'inicio' %}"><img src="{% static 'img/index/logo.png' %}" alt="Logo" title="Logo" class="logotipo"></a>
+        <a href="{% url 'inicio' %}"><img src="{% static 'img/index/logo.png' %}" alt="Logo" class="logotipo"></a>
         <nav class="menu_selectivo">
             <a href="{% url 'inicio' %}">Inicio</a>
-            <!-- Nombre de URL-- propiedades -->
             <a href="{% url 'propiedades' %}">Propiedades</a>
-
-            <!-- {% if user.is_authenticated %}
-            <a href="{% url 'logouts' %}" id="contacto_btl">Logout</a>
-            {% else %}
-            <a href="{% url 'login' %}" id="contacto_btl">login</a>
-            {% endif %} -->
-
+            <a href="#">Contacto</a>
         </nav>
     </header>
+
     <section class="intermedio">
-        {% block intermedio %}
-        <div>
-            <h1>Encontra tu propiedad ideal</h1>
-            <img src="{% static 'img/Hogwarts.png' %}" alt="">
+        <div class="contenedor-inicio">
+            <div class="texto-inicio">
+                <h1 class="h1-inicio">Encuentra el hogar ideal</h1>
+                <p>Explora nuestra selección de propiedades y descubre el lugar perfecto para ti. Desde modernas casas urbanas hasta tranquilas villas en el campo, tenemos opciones para todos los estilos de vida. Con nuestro equipo de expertos, encontrar tu nuevo hogar nunca ha sido tan fácil. ¡Comienza hoy tu búsqueda y da el primer paso hacia la casa de tus sueños!</p>
+            </div>
+            <img src="{% static 'img/index/casa.jpeg' %}" alt="Banner" class="img-inicio">
         </div>
-        {% endblock %}
     </section>
+    
+
     <main class="contenedor_general">
-        {% block cuerpo %}
-        <div class="contenedor_index"> 
-            <img src="{% static 'img/index/Hogwarts.png' %}" alt="">
-            <article class="artitulo">
-                <h2>Colegio Hogwarts de Magia y Hechicería</h2>
-                <p>Es un internado mágico ubicado en Escocia. El castillo se ubica en unas montañas cercanas a un
-                    lago. La localización exacta no ha sido descubierta ya que está escondida por los más poderosos
-                    encantamientos posibles. Sin embargo, de acuerdo con Hermione Granger, no está muy lejos de
-                    Dufftown. Los encantamientos que protegen al castillo son clasificados como encantamientos
-                    anti-aparición y encantos repelentes de Muggles (como el repello muggletum), que lo hacen que ellos
-                    vean unas ruinas antiguas con un letrero que dice "Peligro, prohibido el paso" en lugar del
-                    castillo. Estos encantamientos pueden ser levantados por el Director. La mayoría de los dispositivos
-                    electrónicos no funcionan en los terrenos de Hogwarts. En un momento dado, Hogwarts llegó a
-                    tener 1000 estudiantes.</p>
-                <h4>Perspectiva general</h4>
-                <p>Hogwarts es una de las tres escuelas más importantes de Europa, que entrena a personas con
-                    habilidades mágicas para que se conviertan en magos y brujas cualificados. Su estatus no es muy
-                    discutido en las novelas de Harry Potter, pero es conocida como un internado de secundaria que
-                    aborda a niños de 11 a 17 años.</p>
-        </div>
-
-        <div class="tarjetas_index">
-            <div class="tarjeta_volteo">
-                <div class="tarjeta_volteo-interno">
-                    <div class="tarjeta_volteo-front">
-                        <img src="{% static 'img/index/Gryffindor.jpg' %}" alt="">
-                    </div>
-                    <div class="tarjeta_volteo-back">
-                        Gryffindor es una de las cuatro casas del Colegio Hogwarts de Magia y Hechicería, fundada por
-                        Godric Gryffindor. Su animal emblemático es el león y sus colores son el rojo escarlata y el
-                        dorado. Minerva McGonagall es la más reciente jefa de la casa.
-                    </div>
-                </div>
-            </div>
-            <div class="tarjeta_volteo">
-                <div class="tarjeta_volteo-interno">
-                    <div class="tarjeta_volteo-front">
-                        <img src="{% static 'img/index/Hufflepuff.jpg' %}" alt="">
-                    </div>
-                    <div class="tarjeta_volteo-back">
-                        Hufflepuffes una de las cuatro casas del Colegio Hogwarts de Magia y
-                        Hechicería. Su fundadora es la bruja medieval Helga Hufflepuff. La jefa de la casa es Pomona
-                        Sprout.El fraile gordo es el fantasma de la casa
-                    </div>
-                </div>
-            </div>
-
-            <div class="tarjeta_volteo">
-                <div class="tarjeta_volteo-interno">
-                    <div class="tarjeta_volteo-front">
-                        <img src="{% static 'img/index/Ravenclaw.jpg' %}" alt="">
-                    </div>
-                    <div class="tarjeta_volteo-back">
-                        Ravenclawes una de las cuatro casas que componen el Colegio Hogwarts de Magia
-                        y Hechicería, fundada por Rowena Ravenclaw, quién tuvo una hija, cuyo fantasma es la Dama
-                        Gris la cual fue asesinada por el Barón Sanguinario.
-                    </div>
-                </div>
-            </div>
-
-            <div class="tarjeta_volteo">
-                <div class="tarjeta_volteo-interno">
-                    <div class="tarjeta_volteo-front">
-                        <img src="{% static 'img/index/Slytherin.jpg' %}" alt="">
-                    </div>
-                    <div class="tarjeta_volteo-back">
-                        Slytherin es una de las cuatro casas del Colegio Hogwarts de Magia
-                        y Hechicería, fundada por Salazar Slytherin. Al establecer la casa, Salazar instruyó al Sombrero
-                        Seleccionador para que seleccionara a los estudiantes que tenían las características
-                        particulares que él valoraba más
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <h1 class="subtitulo_index">Ultimos Personajes</h1>
+        <h2 class="subtitulo_index">Últimas Propiedades</h2>
         <div class="contenedor_propiedades">
-            <!-- 
-                i-- Variable para el conteo
-                forms -- Palabra enviada desde "Data" para Traer los Datos
-                for -- Ciclo por Conteo
-                Desde el Primer Elemento hasta el Ultimo elemento
-            -->
-            {% for i in forms %}
             <div class="card" style="width: 18rem;">
-                <!-- Pasamos la Ruta de la Imagen Registrada -->
-                <img src="{{i.Imagen.url}}" class="card-img-top" alt="Imagen BD">
+                <img src="propiedad1.jpg" class="card-img-top" alt="Propiedad 1">
                 <div class="card-body">
-                  <h4 class="card-title">Nombre: {{i.Nombre}}</h4>
-                  <h5 class="card-title">Casa: {{i.Casa}}</h5>
-                  <p class="card-text">Hechizo: {{i.Hechizo}}</p>
-                  {% if perms.App.change_personajes %}
-                  <a href="{% url 'modificar' i.Codigo %}" class="btn btn-warning">Editar</a>
-                  {% endif %}
-                  {% if perms.App.delete_personajes %}
-                  <a href="{% url 'eliminar' i.Codigo %}" class="btn btn-danger">Eliminar</a>
-                  {% endif %}
+                    <h4 class="card-title">Casa en la Playa</h4>
+                    <p class="card-text">Hermosa casa de 3 habitaciones a solo pasos de la playa.</p>
+                    <a href="#" class="btn btn-primary">Ver Más</a>
                 </div>
-              </div>
-              {% endfor %}
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="propiedad2.jpg" class="card-img-top" alt="Propiedad 2">
+                <div class="card-body">
+                    <h4 class="card-title">Apartamento en el Centro</h4>
+                    <p class="card-text">Moderno apartamento de 2 habitaciones en el corazón de la ciudad.</p>
+                    <a href="#" class="btn btn-primary">Ver Más</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="propiedad3.jpg" class="card-img-top" alt="Propiedad 3">
+                <div class="card-body">
+                    <h4 class="card-title">Villa en el Campo</h4>
+                    <p class="card-text">Villa espaciosa rodeada de naturaleza y tranquilidad.</p>
+                    <a href="#" class="btn btn-primary">Ver Más</a>
+                </div>
+            </div>
         </div>
-
-        {% endblock %}
     </main>
+
     <footer>
-        <img src="{% static 'img/index/ig.png' %}" alt="">
-        <img src="{% static 'img/index/facebook.png' %}" alt="">
-        <img src="{% static 'img/index/whatsapp.png' %}" alt="">
-        <img src="{% static 'img/index/gorjeo.png' %}" alt="">
+        <div class="footer">
+            <img src="{% static 'img/index/ig.png' %}" alt="Instagram">
+            <img src="{% static 'img/index/facebook.png' %}" alt="Facebook">
+            <img src="{% static 'img/index/whatsapp.png' %}" alt="WhatsApp">
+            <img src="{% static 'img/index/gorjeo.png' %}" alt="Twitter">
+        </div>
     </footer>
+
     <!-- Hoja de Acciones de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
