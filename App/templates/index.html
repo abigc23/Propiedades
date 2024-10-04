@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSite</title>
+    <title>Propiedades</title>
     <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Hoja de Estilos de Bootstrap -->
@@ -17,23 +17,24 @@
     <header class="encabezado">
        <a href="{% url 'inicio' %}"><img src="{% static 'img/index/logo.png' %}" alt="Logo" title="Logo" class="logotipo"></a>
         <nav class="menu_selectivo">
-            <a href="{% url 'agregar' %}">Agregar</a>
-            <!-- Nombre de URL-- visualizar -->
-            <a href="{% url 'visualizar' %}">Visualizar</a>
-            <a href="">Nosotros</a>
-            <a href="" id="contacto_btn">Contacto</a>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <!-- Nombre de URL-- propiedades -->
+            <a href="{% url 'propiedades' %}">Propiedades</a>
 
-            {% if user.is_authenticated %}
+            <!-- {% if user.is_authenticated %}
             <a href="{% url 'logouts' %}" id="contacto_btl">Logout</a>
             {% else %}
             <a href="{% url 'login' %}" id="contacto_btl">login</a>
-            {% endif %}
+            {% endif %} -->
 
         </nav>
     </header>
     <section class="intermedio">
         {% block intermedio %}
-        <img src="{% static 'img/Intermedio/intermedio_gif.gif' %}" alt="Carrousel" class="principal_intermedio">
+        <div>
+            <h1>Encontra tu propiedad ideal</h1>
+            <img src="{% static 'img/Hogwarts.png' %}" alt="">
+        </div>
         {% endblock %}
     </section>
     <main class="contenedor_general">
@@ -114,7 +115,7 @@
         </div>
 
         <h1 class="subtitulo_index">Ultimos Personajes</h1>
-        <div class="contenedor_visualizar">
+        <div class="contenedor_propiedades">
             <!-- 
                 i-- Variable para el conteo
                 forms -- Palabra enviada desde "Data" para Traer los Datos

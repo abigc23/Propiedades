@@ -6,7 +6,7 @@ urlpatterns = [
     #-->URL, FUNCION, NOMBRE PARA HTML
     path('',Home,name='inicio'),
     path('agregar/',Agregar,name='agregar'),
-    path('visualizar/',ver_Personajes,name='visualizar'),
+    path('propiedades/',ver_Personajes,name='propiedades'),
     path('modificar/<Codigo>/',Modificar_Personajes,name='modificar'),
     path('eliminar/<Codigo>/',Eliminar_Personajes,name='eliminar'),
     path('logouts/',salir,name='logouts'),

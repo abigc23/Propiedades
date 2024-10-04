@@ -4,58 +4,44 @@
     box-sizing: border-box;
 }
 
-/* -----> Configuracion de Index.html <----- */
 .encabezado {
-    /* Altura */
-    height: 70px;
-    /* Color de Fondo */
-    background: #EEEEEE;
+    height: 80px;
+    background: #A62F2F;
     display: flex;
-    /* Propiedad del Display Flex para acomodar los Elementos */
     justify-content: space-between;
+    align-items: center; /* Alinea verticalmente el logo y el menú */
+    padding: 0 10px; /* Añade algo de espacio en los laterales */
 }
 
 .logotipo {
-    margin-left: 10px;
-    width: 70px;
-    height: 70px;
+    width: 300px; /* Tamaño más adecuado para el logo */
+    height: auto;
+    margin-left: 0;
 }
 
 .menu_selectivo {
-    /* Interlineado */
     line-height: 65px;
-    /* Margen Derecho */
-    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .menu_selectivo a {
-    /* Margen Lateral derecho */
     margin-right: 10px;
-    /* Quitamos la linea Inferior a la etiqueta a */
     text-decoration: none;
-    /* Cambiamos el Tamaño de Letra */
     font-size: 16px;
-    /* Cambio de Color del Texto */
-    color: #343434;
+    color: #ffffff;
+    padding-bottom: 5px;
 }
 
 .menu_selectivo a:hover {
-    /* Relleno */
-    padding: 10px;
-    /* Redondear las Esquinas */
-    border-radius: 10px;
-    /* Color de Fondo */
-    background: #395090;
     color: #FCFCFC;
+    border-bottom: 2px solid white;
 }
 
 #contacto_btn {
-    /* Relleno */
     padding: 10px;
-    /* Redondear las Esquinas */
     border-radius: 10px;
-    /* Color de Fondo */
-    background: #395090;
     color: #FCFCFC;
 }
 
@@ -238,9 +224,9 @@ footer img {
     font-style: italic;
 }
 
-/* -----> Configuración del Sector Visualizar <----- */
+/* -----> Configuración del Sector propiedades <----- */
 
-.contenedor_visualizar{
+.contenedor_propiedades{
     display: flex;
     justify-content: center;
 }

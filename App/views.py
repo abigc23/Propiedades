@@ -21,7 +21,7 @@ def ver_Personajes(request):
     data={
         'forms':buscar
     }
-    return render(request,'Pages/visualizar.html',data)
+    return render(request,'Pages/propiedades.html',data)
 
 @login_required
 
@@ -60,7 +60,7 @@ def Modificar_Personajes(request,Codigo):
 def Eliminar_Personajes(request,Codigo):
     buscar=get_object_or_404(Personajes,Codigo=Codigo)
     buscar.delete()
-    return redirect(to="visualizar")
+    return redirect(to="propiedades")
 
 
 def salir(request):
