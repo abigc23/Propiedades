@@ -10,36 +10,39 @@
 </head>
 
 <body>
-    <header class="encabezado">
+    <header class="encabezado propiedades-encabezado">
         <a href="{% url 'inicio' %}">
             <img src="{% static 'img/index/logo.png' %}" alt="Logo" class="logotipo">
         </a>
-        <nav class="menu_selectivo">
+        <nav class="menu_selectivo propiedades-menu">
             <a href="{% url 'inicio' %}">Inicio</a>
             <a href="{% url 'propiedades' %}">Propiedades</a>
             <a href="#">Contacto</a>
         </nav>
     </header>
 
-    <main class="contenedor_general">
-        <h1>Nuestras Propiedades</h1>
-        <div class="contenedor_propiedades">
-            {% for propiedad in propiedades %}
-            <div class="card propiedad-card">
-                <img src="{{ propiedad.imagen.url }}" class="card-img-top" alt="Imagen de {{ propiedad.operacion }}">
-                <div class="card-body">
-                    <p class="tipo-operacion">Venta / {{ propiedad.tipo }} / COD. {{ propiedad.codigo }}</p>
-                    <h5 class="nombre-propiedad">{{ propiedad.nombre }}</h5>
-                    <p class="ubicacion-propiedad">({{ propiedad.ubicacion }})</p>
-                    <p class="precio-propiedad">U$S {{ propiedad.precio }}</p>
-                    <a href="{% url 'detallesprop' propiedad.codigo %}" class="btn btn-primary">Ver Más</a>
+
+    <main class="contenedor_principal_propiedades">
+    <h1 class="h1-propiedades">Nuestras Propiedades</h1>
+        <div>
+            <div class="contenedor_propiedades">
+                {% for propiedad in propiedades %}
+                <div class="propiedad-card">
+                    <img src="{{ propiedad.imagen.url }}" class="card-img-top" alt="Imagen de {{ propiedad.operacion }}">
+                    <div class="card-body">
+                        <p class="tipo-operacion">Venta / {{ propiedad.tipo }} / COD. {{ propiedad.codigo }}</p>
+                        <h5 class="nombre-propiedad">{{ propiedad.nombre }}</h5>
+                        <p class="ubicacion-propiedad">{{ propiedad.ubicacion }}</p>
+                        <p class="precio-propiedad">U$S {{ propiedad.precio }}</p>
+                        <a href="{% url 'detallesprop' propiedad.codigo %}" class="btn-props">Ver más</a>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </main>
 
-    <footer>
+    <footer class="propiedades-footer">
         <div class="footer">
             <img src="{% static 'img/index/ig.png' %}" alt="Instagram">
             <img src="{% static 'img/index/facebook.png' %}" alt="Facebook">

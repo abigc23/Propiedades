@@ -2,7 +2,7 @@ from django.db import models
 
 class Propiedad(models.Model):
     codigo = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100, default='Sin nombre') 
+    nombre = models.CharField(max_length=100, default='Casa') 
     operacion = models.CharField(max_length=100)
     tipo = models.CharField(max_length=30)
     ubicacion = models.CharField(max_length=100)
@@ -16,6 +16,7 @@ class Propiedad(models.Model):
     dormitorios = models.IntegerField()
     baños = models.IntegerField()
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
+    mapa = models.URLField(max_length=500, null=True, blank=True)
 
     def __int__(self):
         return self.codigo

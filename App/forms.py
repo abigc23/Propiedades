@@ -7,3 +7,4 @@ class NuevaPropiedad(forms.ModelForm):
     class Meta:
         model=Propiedad
         fields='__all__'
+        from django.db import models

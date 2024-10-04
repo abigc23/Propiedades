@@ -16,13 +16,12 @@
         <nav class="menu_selectivo">
             <a href="{% url 'inicio' %}">Inicio</a>
             <a href="{% url 'propiedades' %}">Propiedades</a>
-            <a href="#">Contacto</a>
         </nav>
     </header>
 
     <section class="intermedio">
         {% block intermedio %}
-        <div class="contenedor-inicio">
+        <div class="contenedor_inicio">
             <div class="texto-inicio">
                 <h1 class="h1-inicio">Encuentra el hogar ideal</h1>
                 <p>Explora nuestra selección de propiedades y descubre el lugar perfecto para ti. Desde modernas casas urbanas hasta tranquilas villas en el campo, tenemos opciones para todos los estilos de vida. Con nuestro equipo de expertos, encontrar tu nuevo hogar nunca ha sido tan fácil. ¡Comienza hoy tu búsqueda y da el primer paso hacia la casa de tus sueños!</p>
@@ -31,13 +30,14 @@
         </div>
         {% endblock %}
     </section>
+    
+
 
     <div class="separador"></div>
 
-
-    <section class="mapa-container"></section>
+    <section>
+        <h3 class="h3-mapa">Ubicación de Nuestra Inmobiliaria</h3>
         <div class="mapa-contacto">
-            <h3>Ubicación de Nuestra Inmobiliaria</h3>
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.7857989115023!2d-58.505622025035564!3d-34.86160917116241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd6d9ed09be39%3A0xfd444b8009543f91!2sMazzei%20Propiedades!5e0!3m2!1ses-419!2sar!4v1728016688349!5m2!1ses-419!2sar" 
                 width="600" 
@@ -54,23 +54,30 @@
         </div>
     </section>
 
-    <main class="contenedor_general_props">
-        <div class="contenedor_props">
+
+    <main>     
+        <h1 class="h1-props-index">Nuestras Propiedades</h1>
+        <div class="contenedor_index">
             {% for propiedad in propiedades %}
-            <div class="card propiedad-card">
-                <img src="{{ propiedad.imagen.url }}" class="card-img-top" alt="Imagen de {{ propiedad.operacion }}">
+            <div class="detalles_index propiedad-card">
+                <img src="{{ propiedad.imagen.url }}" alt="Imagen de {{ propiedad.nombre }}" class="img-detalle-index">
                 <div class="card-body">
-                    <p class="tipo-operacion">Venta / {{ propiedad.tipo }} / COD. {{ propiedad.codigo }}</p>
-                    <h5 class="nombre-propiedad">{{ propiedad.nombre }}</h5>
-                    <p class="ubicacion-propiedad">({{ propiedad.ubicacion }})</p>
-                    <p class="precio-propiedad">U$S {{ propiedad.precio }}</p>
-                    <a href="{% url 'detallesprop' propiedad.codigo %}" class="btn btn-primary">Ver Más</a>
+                    <p class="tipo-operacion"><strong>Operación:</strong> {{ propiedad.operacion }}</p>
+                    <p class="nombre-propiedad">{{ propiedad.nombre }}</p>
+                    <p class="ubicacion-propiedad"><strong>Ubicación:</strong> {{ propiedad.ubicacion }}</p>
+                    <p class="precio-propiedad"><strong>Precio:</strong> U$S {{ propiedad.precio }}</p>
+                    <p><strong>Publicado el:</strong> {{ propiedad.fecha_publicacion|date:"d M Y" }}</p>
+                    <a href="{% url 'detallesprop' propiedad.codigo %}" class="btn-index-vm">Ver Más</a>
                 </div>
             </div>
             {% endfor %}
-        </div>
 
-    </main>
+            <div class="conten-btn-index">
+                <a href="{% url 'propiedades' %}" class="btn-index">Ver todas las propiedades</a>
+            </div>
+        </div>
+    </main>     
+
 
     <footer>
         <div class="footer">
